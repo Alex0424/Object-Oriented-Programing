@@ -19,9 +19,16 @@ n1 = Newspaper("The Washington Post")
 n2 = Newspaper("The New York Times")
 
 # TODO: use type() to inspect the object type
-
+print(type(b1))
+print(type(n1))
 
 # TODO: compare two types together
+if type(b1) is Newspaper:
+    print(f"{b2.title} is same class type")
+else:
+    print(f"{b1.title} is not same class type")
 
 
 # TODO: use isinstance to compare a specific instance to a known type
+print(f"Is {b1.title} a Newspaper class type?: ", isinstance(b1, Newspaper))
+print(f"Is {b1.title} a Book class type?: ", isinstance(b1, Book))

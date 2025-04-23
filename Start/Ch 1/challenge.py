@@ -9,8 +9,22 @@
 # And a method get_description() which returns a string in the form
 # of "Ticker: Company -- $Price"
 
+
 class Stock:
-    pass
+    ticker: str
+    price: float
+    company: str
+
+    def __init__(
+        self, ticker: str, price: float, company: str
+    ) -> None:  # List of arameters
+        self.ticker = ticker  # Attribute 1
+        self.price = price  # Attribute 2
+        self.company = company  # Attribute 3
+
+    def get_description(self):
+        return f"{self.ticker}: {self.company} -- ${self.price}"
+
 
 # ~~~~~~~~~ TEST CODE ~~~~~~~~~
 msft = Stock("MSFT", 342.0, "Microsoft Corp")
