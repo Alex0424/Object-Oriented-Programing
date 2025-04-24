@@ -2,28 +2,35 @@
 # Understanding class inheritance
 
 
-class Book:
-    def __init__(self, title, author, pages, price):
-        self.title = title
+class BookParent:
+    def __init__(self, price, title):
         self.price = price
+        self.title = title
+
+
+class AnotherParent:
+    def __init__(self, price, title, publisher, period):
+        self.price = price
+        self.title = title
+        self.period = period
+        self.publisher = publisher
+
+
+class Book(BookParent):
+    def __init__(self, title, author, pages, price):
         self.author = author
         self.pages = pages
+        super().__init__(price, title)
 
 
-class Magazine:
+class Magazine(AnotherParent):
     def __init__(self, title, publisher, price, period):
-        self.title = title
-        self.price = price
-        self.period = period
-        self.publisher = publisher
+        super().__init__(price, title, publisher, period)
 
 
-class Newspaper:
+class Newspaper(AnotherParent):
     def __init__(self, title, publisher, price, period):
-        self.title = title
-        self.price = price
-        self.period = period
-        self.publisher = publisher
+        super().__init__(price, title, publisher, period)
 
 
 b1 = Book("Brave New World", "Aldous Huxley", 311, 29.0)
